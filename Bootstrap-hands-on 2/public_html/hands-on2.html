@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap hands-on</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="author" content="Liisa Auer">
+        <link href="css/bootstrap.css" rel="stylesheet" >        
+        <style>
+            section {
+                background-color: #FEF3DC;
+            } 
+
+            .short {
+                width: 10em;
+            }            
+        </style>
+    </head>
+    <body>
+        <div class="container"> 
+            <header class="row bg-dark">
+                <div class="col-12">
+                    <h1 class="text-success">Bootstrap hands-on 2</h1>
+                </div>
+            </header>
+
+            <section class="row"> 
+                <div class="col-md-4">
+                    <h3 class="text-primary">Random numbers</h3>
+                    
+                    <form>                        
+                        <div class="form-check">
+                            <input type="radio" name="num_scale" id="small"
+                                   data-min="1" data-max="10" class="numbers form-check-input" checked>
+                            <label for="small" class="form-check-label">1 - 10</label>
+                        </div> 
+                        <div class="form-check">
+                            <input type="radio" name="num_scale" id="middle"
+                                   data-min="1" data-max="20" class="numbers form-check-input">
+                            <label for="middle" class="form-check-label">1 - 20</label>                            
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="num_scale" id="large"
+                                   data-min="1" data-max="20" class="numbers form-check-input">
+                            <label for="large" class="form-check-label">1 - 50</label>                            
+                        </div>
+                        <button type="button" class="btn btn-primary mt-3 mb-3" id="numbers">
+                            Numbers</button>
+                    </form>
+                    
+                    <p>Numbers: <span id="rnd_numbers"></span></p> 
+                </div>                
+
+                <div class="col-md-4">
+                    <h3 class="text-warning">Circle or Square</h3>
+                    
+                    <form>                        
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input"
+                                   name="option" value="1" id="radius" checked>
+                            <label for="large" class="form-check-label">Radius</label> 
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-input"
+                                   name="option" value="2" id="radius">
+                            <label for="large" class="form-check-label">Square</label> 
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="radius_side2">Radius/Side</label>
+                            <div>
+                                <input type="number" class="form-control" id="radius_side2">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning" id="calculate2">
+                            Calculate</button>
+                    </form>                   
+                    
+                    <p class="mt-3">Result:<span id="result1"></span></p> 
+                </div>                
+
+                <div class="col-md-4">
+                    <h3 class="text-info">Triangle</h3>
+                    
+                    <form>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="side">
+                                Side</label>
+                            <div class="col-12 col-md-9">
+                                <input type="number" class="form-control" id="side">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-md-3 col-form-label" for="bottom">
+                                Bottom</label>
+                            <div class="col-12 col-md-9">
+                                <input type="number" class="form-control" id="side">
+                            </div>                            
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3"></div>
+                            <div class="col">
+                                <button type="button" class="btn btn-primary"
+                                    id="triangle">Triangle</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p>Triangle height: <span id="t_height"></span><br>
+                        Triangle around: <span id="t_around"></span><br>
+                        Triangle area: <span id="t_area"></span></p>
+                </div>
+            </section>
+
+            <section class="row">
+                <div class="col-md-4">
+                    <h3 class="text-success">Random numbers</h3>
+                    
+                    <form>
+                        <div class="input-group mb-3 short">
+                            <div>
+                                <span class="input-group-text">Min</span> 
+                            </div>
+                            <input type="number" class="form-control" id="min">
+                        </div>
+                        <div class="input-group mb-3 short">
+                            <div>
+                                <span class="input-group-text">Max</span> 
+                            </div>
+                            <input type="number" class="form-control" id="max">
+                        </div>                            
+                        <button type="button" class="btn btn-success mb-3" id="random">
+                            Random</button>
+                    </form>
+
+                    <p>Random numbers: <span id="randoms"></span></p>
+                </div> 
+
+                <div class="col-md-4">
+                    <h3 class="text-danger">Collapse element</h3>                    
+                    
+                    <button data-toggle="collapse" data-target="#text"
+                            class="btn btn-danger">Click me</button>
+                    
+                    <div id="text" class="collapse">
+                        <p>I have studied so hard all autumn time. Now I learn 
+                            Bootstrap and responsive design.</p> 
+                        <p>This text will be shown and hided using the button above.</p> 
+                        
+                        <p>Spinners</p>
+                        <div class="spinner-grow text-primary"></div>
+                        <div class="spinner-grow text-success"></div>
+                        <div class="spinner-grow text-info"></div>
+                        <div class="spinner-grow text-warning"></div>
+                    </div>         
+                </div>
+
+                <div class="col-md-4">
+                    <h3 class="text-secondary">Accordion</h3>                    
+
+                    <div id="top">
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#One">
+                                    Collapsible Text
+                                </a>
+                            </div>
+                            <div id="One" class="collapse show" data-parent="#top">
+                                <div class="card-body">
+                                    <p>I have studied so hard all autumn time. Now I learn
+                                    Bootsrap and responsive design</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Two">
+                                    More text
+                                </a>
+                            </div>
+                            <div id="Two" class="collapse" data-parent="#top">
+                                <div class="card-body">                            
+                                    <p>These texts will be shown when user clicks the text
+                                        handlings</p>
+                                </div>    
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card-header">
+                                <a class="card-link" data-toggle="collapse" href="#Three">
+                                    Spinners
+                                </a>
+                            </div>
+                            <div id="Three" class="collapse" data-parent="#top">
+                                <div class="card-body">
+                                    <div class="spinner-grow text-primary"></div>
+                                    <div class="spinner-grow text-success"></div>
+                                    <div class="spinner-grow text-danger spinner-border-sm"></div>
+                                    <div class="spinner-grow text-warning spinner-grow-sm"></div>                                    
+                                </div>                                
+                            </div>
+                        </div>                        
+                    </div>
+                
+                </div>
+            </section>
+
+            <footer class="row bg-dark">
+                <div class="col">
+                    <p class="text-center text-light mt-2 mb-2">Toni Henriksson</p>
+                </div>
+            </footer>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous"></script>
+
+    </body>
+</html>
+
